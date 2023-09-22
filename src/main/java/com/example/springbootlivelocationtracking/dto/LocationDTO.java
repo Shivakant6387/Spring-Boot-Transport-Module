@@ -1,30 +1,19 @@
-package com.example.springbootlivelocationtracking.model;
+package com.example.springbootlivelocationtracking.dto;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Location {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@ToString
+public class LocationDTO {
     private Long id;
-
-    @NotNull
     private Double latitude;
-    @NotNull
     private Double longitude;
-    @NotNull
     private LocalDateTime timestamp;
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "parent_id")
-    private Parent parent;
 }

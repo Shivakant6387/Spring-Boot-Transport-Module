@@ -1,5 +1,6 @@
 package com.example.springbootlivelocationtracking.model;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,10 @@ public class TransportFee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private Date feeDate;
+    @NotNull
     private String name;
+    @NotNull
     private double feeAmount;
 }

@@ -45,7 +45,7 @@ public class MaintenanceService {
             MaintenanceRecord savedMaintenanceRecord = maintenanceRecordRepository.save(maintenanceRecord);
             return convertToDTO(savedMaintenanceRecord);
         } catch (Exception ex) {
-            throw new ResourceNotFoundException("Maintenance Record is not created" + ex);
+            throw new ResourceNotFoundException("Maintenance Record is not created" + ex.getMessage());
         }
     }
 
